@@ -1,8 +1,9 @@
 import React, { useState, useEffect } from 'react'
 import { useDebounce } from 'react-use'
-import Search from './components/search'
-import Spinner from './components/Spinner'
-import MovieCard from './components/MovieCard'
+import Search from './components/search.jsx'
+import Spinner from './components/Spinner.jsx'
+import MovieCard from './components/MovieCard.jsx'
+import {updateSearchCount} from './appWrite.js'
 const API_BASE_URL = 'https://api.themoviedb.org/3';
 
 const API_KEY = `eyJhbGciOiJIUzI1NiJ9.eyJhdWQiOiI4OWU2NDliZjI5NDNkZDEwZTgwNzYzM2EwY2IxNGRmYyIsIm5iZiI6MTc2MDM0MzE1OS4zODYsInN1YiI6IjY4ZWNiNDc3ZWZjMGEyMzc5MGQ2OGZhYSIsInNjb3BlcyI6WyJhcGlfcmVhZCJdLCJ2ZXJzaW9uIjoxfQ.a8TonxUyZmVe0Hx-Rvbe2VReN6khegeQbfi8dj6buaM`
@@ -43,6 +44,7 @@ const fetchMovies = async (query = '') =>{
     }
   const data = await response.json()
  setMovies(data.results || [])
+ updateSearchCount()
   } catch(error){
     console.error(`failed to fetch movie ${error}`)
     setErrorMessage('Failed to fetch movies. Please try again later.')
