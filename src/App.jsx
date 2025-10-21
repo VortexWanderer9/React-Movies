@@ -5,7 +5,7 @@ import Spinner from './components/Spinner.jsx'
 import MovieCard from './components/MovieCard.jsx'
 const API_BASE_URL = 'https://api.themoviedb.org/3';
 
-const API_KEY = `eyJhbGciOiJIUzI1NiJ9.eyJhdWQiOiI4OWU2NDliZjI5NDNkZDEwZTgwNzYzM2EwY2IxNGRmYyIsIm5iZiI6MTc2MDM0MzE1OS4zODYsInN1YiI6IjY4ZWNiNDc3ZWZjMGEyMzc5MGQ2OGZhYSIsInNjb3BlcyI6WyJhcGlfcmVhZCJdLCJ2ZXJzaW9uIjoxfQ.a8TonxUyZmVe0Hx-Rvbe2VReN6khegeQbfi8dj6buaM`
+const API_KEY = ``
 const API_OPTIONS = {
   method: 'GET',
   headers: {
